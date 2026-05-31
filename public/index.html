@@ -31,7 +31,9 @@
        ═══════════════════════════════════════════════════════════════ -->
   <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-sm bg-[#0E0E0E]/80 backdrop-blur-md border-b border-outline-variant/10 h-[64px]" aria-label="Main navigation">
     <div class="flex items-center gap-stack-md">
-      <a href="#" class="text-body-lg font-bold tracking-tighter text-on-surface uppercase hover:text-primary transition-colors">MALOM</a>
+      <a href="#" class="flex items-center" aria-label="Malom Invest">
+        <img src="logos/1.png" alt="Malom Invest Logo" class="h-6 w-auto opacity-95 hover:opacity-100 transition-opacity" style="filter: brightness(0) saturate(100%) invert(84%) sepia(16%) saturate(1471%) hue-rotate(341deg) brightness(97%) contrast(92%);" />
+      </a>
     </div>
     
     <!-- Desktop navigation -->
@@ -130,35 +132,30 @@
           <!-- Card Header -->
           <div class="flex justify-between items-start">
             <div>
-              <span class="font-label-mono text-[8px] text-primary/60 block uppercase">MODEL LAYOUT</span>
-              <h4 class="font-label-mono text-[10px] text-on-surface font-semibold uppercase tracking-wider">UNIT A-3 // LEVEL 2</h4>
+              <span class="font-label-mono text-[8px] text-primary/60 block uppercase" data-en="ACTIVE RENDERING" data-sr="АКТИВНО РЕНДЕРОВАЊЕ">ACTIVE RENDERING</span>
+              <h4 class="font-label-mono text-[10px] text-on-surface font-semibold uppercase tracking-wider">FACADE HUD // Tatar Hill</h4>
             </div>
             <div class="font-label-mono text-[8px] text-primary border border-primary/20 bg-primary/5 px-2 py-0.5 rounded-sm" data-en="SECURE CONNECT" data-sr="СИГУРНА ВЕЗА">
               SECURE CONNECT
             </div>
           </div>
 
-          <!-- Dynamic Wireframe SVG -->
-          <div class="flex-1 flex items-center justify-center py-4">
-            <svg viewBox="0 0 240 180" class="w-full max-w-[200px] text-primary/60 opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:text-primary">
-              <!-- Bounds -->
-              <rect x="5" y="5" width="230" height="170" fill="none" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3 3" />
-              <!-- Walls -->
-              <line x1="5" y1="90" x2="235" y2="90" stroke="currentColor" stroke-width="1.5" />
-              <line x1="120" y1="5" x2="120" y2="175" stroke="currentColor" stroke-width="1.5" />
-              <line x1="120" y1="60" x2="235" y2="60" stroke="currentColor" stroke-width="1" />
-              <!-- Doors -->
-              <path d="M 120,60 A 30,30 0 0,1 150,90" fill="none" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2" />
-              <path d="M 120,90 A 30,30 0 0,0 90,120" fill="none" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 2" />
-              <!-- Labels -->
-              <text x="25" y="50" font-family="monospace" font-size="6" fill="currentColor" opacity="0.6">BEDROOM_01</text>
-              <text x="145" y="35" font-family="monospace" font-size="6" fill="currentColor" opacity="0.6">LIVING_AREA</text>
-              <text x="25" y="140" font-family="monospace" font-size="6" fill="currentColor" opacity="0.6">TERRACE_WEST</text>
-              <text x="145" y="140" font-family="monospace" font-size="6" fill="currentColor" opacity="0.6">FOYER / ENTRY</text>
-              <!-- Specs -->
-              <text x="110" y="85" font-family="monospace" font-size="5" fill="#e6c479">6.40m</text>
-              <text x="125" y="65" font-family="monospace" font-size="5" fill="#e6c479">4.20m</text>
-            </svg>
+          <!-- Interactive Facade Render HUD Overlay -->
+          <div class="flex-1 relative w-full my-4 overflow-hidden rounded-sm border border-primary/20 bg-[#070707] flex items-center justify-center">
+            <!-- Building facade image -->
+            <img src="images/contemporary-building.png" alt="Kinetic facade scan rendering" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-85 transition-all duration-700" />
+            <!-- Laser scan sweep effect -->
+            <div class="absolute inset-x-0 top-0 bg-gradient-to-b from-primary/15 via-primary/5 to-transparent h-10 w-full animate-scan pointer-events-none"></div>
+            <!-- HUD grid coordinate line system -->
+            <div class="absolute inset-0 border-t border-b border-primary/10 pointer-events-none"></div>
+            <div class="absolute inset-x-1/2 inset-y-0 border-l border-primary/10 pointer-events-none"></div>
+            <!-- Active sensor probes -->
+            <div class="absolute top-[28%] left-[45%] w-2 h-2 bg-primary rounded-full pulse-gold"></div>
+            <div class="absolute bottom-[35%] right-[30%] w-2 h-2 bg-primary rounded-full pulse-gold"></div>
+            <!-- Scan identifier tag -->
+            <div class="absolute bottom-2 left-2 bg-[#0E0E0E]/90 px-2 py-0.5 rounded-sm font-label-mono text-[8px] text-primary tracking-wider uppercase border border-primary/20">
+              FACADE // SCAN_04
+            </div>
           </div>
 
           <!-- HUD Stats Footer -->
