@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  
+  <!-- ── SEO: Title & Description ───────────────────────────────── -->
+  <title>Malom Invest | Kinetic Smart-Luxury Residences</title>
+  <meta name="description" content="Architectural masterpieces crafted with surgical precision. We build premium, smart-luxury environments that respond to the kinetic energy of modern life." />
+  
+  <!-- ── Open Graph ─────────────────────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Malom Invest | Kinetic Smart-Luxury" />
+  <meta property="og:description" content="Architectural masterpieces responding to the kinetic energy of modern life. Exclusive residences in Serbia, Cyprus, Sweden, Poland, and UAE." />
+  <meta property="og:image" content="images/og-image.jpg" />
+  
+  <!-- ── Favicon ────────────────────────────────────────────────── -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- ── Fonts ──────────────────────────────────────────────────── -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- ── Tailwind compiled CSS ──────────────────────────────────── -->
+  <link rel="stylesheet" href="dist/output.css?v=1.0.2" />
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary overflow-x-hidden">
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TOP NAV BAR
+       ═══════════════════════════════════════════════════════════════ -->
+  <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-sm bg-[#0E0E0E]/80 backdrop-blur-md border-b border-outline-variant/10 h-[64px]" aria-label="Main navigation">
+    <div class="flex items-center gap-stack-md">
+      <a href="#" class="flex items-center" aria-label="Malom Invest">
+        <img src="logos/1.png" alt="Malom Invest Logo" class="h-6 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+      </a>
+    </div>
+    
+    <!-- Desktop navigation -->
+    <div class="hidden md:flex items-center gap-stack-lg font-label-mono text-[11px] uppercase tracking-widest text-on-surface-variant">
+      <a class="hover:text-primary transition-colors duration-300" href="#homes" data-en="Homes" data-sr="Домови">Homes</a>
+      <a class="hover:text-primary transition-colors duration-300" href="#philosophy" data-en="Philosophy" data-sr="Филозофија">Philosophy</a>
+      <a class="hover:text-primary transition-colors duration-300" href="#place" data-en="Place" data-sr="Локација">Place</a>
+      <a class="hover:text-primary transition-colors duration-300" href="#footprint" data-en="Footprint" data-sr="Мапа">Footprint</a>
+    </div>
+
+    <div class="flex items-center gap-stack-md">
+      <!-- Status Badge -->
+      <div class="hidden lg:flex items-center gap-stack-xs font-label-mono text-[10px] tracking-wider bg-surface-container/50 border border-outline-variant/20 px-3 py-1 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-primary pulse-gold"></span>
+        <span class="text-on-surface uppercase" data-en="3 RESIDENCES AVAILABLE" data-sr="3 СЛОБОДНЕ РЕЗИДЕНЦИЈЕ">3 RESIDENCES AVAILABLE</span>
+      </div>
+      
+      <div class="h-4 w-px bg-outline-variant/30 hidden md:block"></div>
+      
+      <!-- Language Switcher -->
+      <button id="lang-switcher" class="font-label-mono text-xs hover:text-primary transition-colors border border-outline-variant/30 px-3 py-1 text-on-surface-variant uppercase tracking-wider rounded-sm">
+        SR
+      </button>
+
+      <!-- Mobile Menu Button -->
+      <button class="p-2 md:hidden flex flex-col gap-1.5 focus:outline-none" id="menu-toggle" aria-label="Toggle menu">
+        <span class="w-6 h-0.5 bg-primary transition-all duration-300"></span>
+        <span class="w-6 h-0.5 bg-primary transition-all duration-300"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       MOBILE NAVIGATION OVERLAY
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="fixed inset-0 bg-[#0A0A0A] z-[40] menu-hidden flex flex-col justify-center px-margin-mobile" id="mobile-menu">
+    <div class="flex flex-col gap-6 text-center">
+      <a class="text-display-xl-mobile font-light text-on-surface-variant hover:text-primary transition-colors" href="#homes" data-en="Residences" data-sr="Резиденције">Residences</a>
+      <a class="text-display-xl-mobile font-light text-on-surface-variant hover:text-primary transition-colors" href="#philosophy" data-en="Philosophy" data-sr="Филозофија">Philosophy</a>
+      <a class="text-display-xl-mobile font-light text-on-surface-variant hover:text-primary transition-colors" href="#place" data-en="Tatar Hill" data-sr="Татарско Брдо">Tatar Hill</a>
+      <a class="text-display-xl-mobile font-light text-on-surface-variant hover:text-primary transition-colors" href="#footprint" data-en="Footprint" data-sr="Мапа">Footprint</a>
+      <a class="text-display-xl-mobile font-light text-on-surface-variant hover:text-primary transition-colors" href="#contact" data-en="Contact" data-sr="Контакт">Contact</a>
+    </div>
+    <div class="mt-stack-xl pt-stack-md border-t border-outline-variant/20">
+      <a href="#contact" class="block w-full bg-primary text-on-primary text-center font-label-caps py-stack-md uppercase tracking-widest hover:bg-primary-container transition-colors" id="btn-mobile-inquire" data-en="Inquire Now" data-sr="Пошаљи Упит">Inquire Now</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       HERO SECTION
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative h-screen w-full flex flex-col justify-center px-margin-mobile md:px-margin-desktop overflow-hidden bg-[#0A0A0A]" id="hero">
+    <div class="relative z-10 w-full max-w-container-max mx-auto grid grid-cols-12 gap-gutter items-center">
+      <div class="col-span-12 md:col-span-7 flex flex-col pt-16">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary pulse-gold"></span>
+          <span class="font-label-mono text-xs uppercase text-primary tracking-widest" data-en="KINETIC SMART-LUXURY" data-sr="КИНЕТИЧКИ СМАРТ-ЛУКСУЗ">KINETIC SMART-LUXURY</span>
+        </div>
+        <h1 class="font-display-xl text-display-xl-mobile md:text-display-xl leading-none">
+          <span class="block font-thin" data-en="Homes" data-sr="Домови">Homes</span>
+          <span class="block pl-8 md:pl-16 italic font-light opacity-80" data-en="that live" data-sr="који живе">that live</span>
+          <span class="block font-black text-primary" data-en="with you." data-sr="са вама.">with you.</span>
+        </h1>
+        <div class="mt-stack-lg md:mt-stack-xl max-w-md">
+          <p class="font-body-lg text-on-surface-variant mb-stack-lg" data-en="Architectural masterpieces crafted with surgical precision. We build environments that respond to the kinetic energy of modern life." data-sr="Архитектонска ремек-дела изграђена са хируршком прецизношћу. Стварамо просторе који одговарају кинетичкој енергији модерног живота.">
+            Architectural masterpieces crafted with surgical precision. We build environments that respond to the kinetic energy of modern life.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a class="inline-flex items-center gap-stack-sm px-8 py-4 border border-primary text-primary font-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-500 group" href="#homes">
+              <span data-en="Discover Homes" data-sr="Истражи Домове">Discover Homes</span>
+              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+            <a class="inline-flex items-center gap-stack-sm px-8 py-4 bg-surface-container/60 hover:bg-surface-container border border-outline-variant/30 text-on-surface font-label-caps uppercase tracking-widest transition-all duration-300" href="#contact" data-en="Inquire" data-sr="Упит">
+              Inquire
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hero Image Display -->
+      <div class="hidden md:flex col-span-5 relative h-[70vh] flex-col justify-center items-end">
+        <div class="relative w-full aspect-[3/4] overflow-hidden rounded-sm border border-outline-variant/20 group">
+          <img alt="Premium contemporary residential building at Tatar Hill" class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100" src="images/contemporary-building.png" />
+          <div class="absolute bottom-stack-md right-stack-md glass-panel p-stack-md rounded-sm max-w-[220px]">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary pulse-gold"></span>
+              <span class="font-label-mono text-[10px] uppercase tracking-wider text-primary" data-en="Live Insight" data-sr="Увид Уживо">Live Insight</span>
+            </div>
+            <p class="font-label-mono text-[11px] text-on-surface leading-tight" data-en="Thermal efficiency at 98.4% peak performance." data-sr="Термална ефикасност на 98.4% врхунских перформанси.">Thermal efficiency at 98.4% peak performance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker -->
+    <div class="absolute bottom-0 left-0 w-full bg-[#0E0E0E] border-t border-outline-variant/10 py-3 overflow-hidden">
+      <div class="ticker-wrap flex">
+        <div class="ticker-content font-label-mono text-[10px] uppercase tracking-[0.25em] text-on-surface-variant/50 flex gap-24 items-center">
+          <span>Premium residences · Since 2016 · Cyprus · Sweden · Poland · UAE · Serbia</span>
+          <span>Premium residences · Since 2016 · Cyprus · Sweden · Poland · UAE · Serbia</span>
+          <span>Premium residences · Since 2016 · Cyprus · Sweden · Poland · UAE · Serbia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 2: PHILOSOPHY (BENTO GRID WITH GLOW)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-surface max-w-container-max mx-auto reveal" id="philosophy">
+    <div class="text-center mb-12">
+      <span class="font-label-mono text-xs text-primary uppercase tracking-[0.3em]" data-en="PRINCIPLES" data-sr="ПРИНЦИПИ">PRINCIPLES</span>
+      <h2 class="font-headline-lg text-display-xl-mobile md:text-headline-lg mt-2" data-en="Philosophy by Design" data-sr="Филозофија Дизајна">Philosophy by Design</h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter auto-rows-[280px] md:auto-rows-[300px]">
+      <!-- Tile 1 (2x2) -->
+      <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-sm border border-outline-variant/20">
+        <img alt="Detail of natural oak wood texture" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 scale-105 group-hover:scale-100 opacity-90 group-hover:opacity-100" src="images/interior-oak.png" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/30 to-transparent"></div>
+        <div class="absolute bottom-stack-lg left-stack-lg">
+          <p class="font-label-mono text-xs text-primary mb-1">PRINCIPLE I</p>
+          <h3 class="font-headline-lg text-display-xl-mobile md:text-headline-lg text-on-surface max-w-md" data-en="Materials that age with grace." data-sr="Материјали који старе са грациозношћу.">Materials that age with grace.</h3>
+        </div>
+      </div>
+      
+      <!-- Tile 2 (1x1) -->
+      <div class="bg-surface-container-high border border-outline-variant/10 p-stack-lg flex flex-col justify-end rounded-sm living-gold-inner">
+        <span class="material-symbols-outlined text-primary mb-4 text-3xl" style="font-variation-settings: 'FILL' 1;">sensors</span>
+        <h4 class="font-headline-sm text-on-surface" data-en="Intelligence in background." data-sr="Интелигенција у позадини.">Intelligence in background.</h4>
+        <p class="mt-2 text-on-surface-variant font-body-md" data-en="Invisible tech tailored to your movement." data-sr="Невидљива технологија прилагођена вашим покретима.">Invisible tech tailored to your movement.</p>
+      </div>
+      
+      <!-- Tile 3 (1x1) -->
+      <div class="bg-primary p-stack-lg flex flex-col justify-between rounded-sm relative overflow-hidden group hover:bg-surface-tint transition-colors duration-500 cursor-default">
+        <span class="font-label-mono text-on-primary-container font-semibold tracking-wider">LEGACY</span>
+        <h4 class="font-display-xl text-[40px] leading-none text-on-primary-container font-black tracking-tighter" data-en="100 YEARS BY DESIGN" data-sr="100 ГОДИНА У ДИЗАЈНУ">100 YEARS BY DESIGN</h4>
+      </div>
+      
+      <!-- Tile 4 (1x2 on desktop, 1x1 on mobile) -->
+      <div class="md:row-span-2 bg-surface-container border border-outline-variant/10 p-stack-lg flex flex-col justify-between rounded-sm relative overflow-hidden group">
+        <div class="space-y-4">
+          <span class="font-label-mono text-xs text-primary block">PRINCIPLE II</span>
+          <h4 class="font-headline-sm md:font-headline-lg text-on-surface" data-en="Built to outlast us." data-sr="Грађено да нас надживи.">Built to outlast us.</h4>
+          <p class="text-on-surface-variant font-body-md" data-en="We select locations with the next century in mind. Value that matures, structures that endure." data-sr="Бирамо локације мислећи на следећи век. Вредност која сазрева, структуре које трају.">We select locations with the next century in mind. Value that matures, structures that endure.</p>
+        </div>
+        <div class="flex items-center gap-2 font-label-mono text-xs text-primary pt-4">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary pulse-gold"></span>
+          <span>A+ CERTIFIED CO2 STATIC</span>
+        </div>
+        <div class="absolute -right-6 -bottom-6 opacity-5 group-hover:scale-110 group-hover:opacity-10 transition-all duration-700">
+          <span class="material-symbols-outlined text-[180px]" style="font-variation-settings: 'wght' 100;">architecture</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 3: CURRENT RESIDENCES (INTERACTIVE SHOWCASE)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-stack-xl bg-surface-container-lowest overflow-hidden reveal" id="homes">
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-stack-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+      <div>
+        <span class="font-label-mono text-xs text-primary uppercase tracking-[0.3em]" data-en="THE COLLECTION" data-sr="КОЛЕКЦИЈА">THE COLLECTION</span>
+        <h2 class="font-display-xl text-display-xl-mobile md:text-headline-lg mt-2" data-en="Current Residences" data-sr="Тренутне Резиденције">Current Residences</h2>
+      </div>
+      <div class="flex gap-4">
+        <button id="residence-prev" class="w-12 h-12 flex items-center justify-center border border-outline-variant/30 rounded-full hover:border-primary hover:text-primary transition-colors focus:outline-none" aria-label="Previous property">
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button id="residence-next" class="w-12 h-12 flex items-center justify-center border border-outline-variant/30 rounded-full hover:border-primary hover:text-primary transition-colors focus:outline-none" aria-label="Next property">
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Residence cards container with horizontal layout & switcher script -->
+    <div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <div class="relative overflow-hidden w-full">
+        <div id="residences-slider" class="flex gap-gutter transition-transform duration-700 ease-out w-full">
+          
+          <!-- Property Card 1 -->
+          <div class="min-w-full md:min-w-[550px] lg:min-w-[650px] group cursor-pointer flex-shrink-0" onclick="showUnitDetails('hillside')">
+            <div class="relative aspect-[16/10] overflow-hidden rounded-sm border border-outline-variant/20">
+              <img alt="Hillside Residences in Belgrade, Serbia" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="images/tatar-hill.jpg" />
+              <div class="absolute top-4 right-4 glass-panel px-3 py-1 rounded-full">
+                <span class="font-label-mono text-[10px] text-primary uppercase tracking-wider" data-en="Starting €4.2M" data-sr="Од €4.2М">Starting €4.2M</span>
+              </div>
+            </div>
+            <div class="mt-4 flex justify-between items-start">
+              <div>
+                <h3 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors" data-en="Hillside Residences" data-sr="Брдске Резиденције">Hillside Residences</h3>
+                <p class="text-on-surface-variant font-label-mono uppercase text-[11px] mt-1" data-en="Belgrade, Serbia / 2024" data-sr="Београд, Србија / 2024">Belgrade, Serbia / 2024</p>
+              </div>
+              <div class="text-right font-label-mono text-xs text-primary border border-primary/20 bg-primary/5 px-3 py-1 rounded-sm" data-en="01 / 03 Available" data-sr="01 / 03 Слободно">
+                01 / 03 Available
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 2 -->
+          <div class="min-w-full md:min-w-[550px] lg:min-w-[650px] group cursor-pointer flex-shrink-0" onclick="showUnitDetails('monolith')">
+            <div class="relative aspect-[16/10] overflow-hidden rounded-sm border border-outline-variant/20">
+              <img alt="The Monolith Residences in Limassol, Cyprus" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="images/product-2.jpg" />
+              <div class="absolute top-4 right-4 glass-panel px-3 py-1 rounded-full">
+                <span class="font-label-mono text-[10px] text-primary uppercase tracking-wider" data-en="Private Sale" data-sr="Приватна Продаја">Private Sale</span>
+              </div>
+            </div>
+            <div class="mt-4 flex justify-between items-start">
+              <div>
+                <h3 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors" data-en="The Monolith" data-sr="Монолит">The Monolith</h3>
+                <p class="text-on-surface-variant font-label-mono uppercase text-[11px] mt-1" data-en="Limassol, Cyprus / 2025" data-sr="Лимасол, Кипар / 2025">Limassol, Cyprus / 2025</p>
+              </div>
+              <div class="text-right font-label-mono text-xs text-primary border border-primary/20 bg-primary/5 px-3 py-1 rounded-sm" data-en="Application Only" data-sr="Само на Упит">
+                Application Only
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 3 -->
+          <div class="min-w-full md:min-w-[550px] lg:min-w-[650px] group cursor-pointer flex-shrink-0" onclick="showUnitDetails('nordic')">
+            <div class="relative aspect-[16/10] overflow-hidden rounded-sm border border-outline-variant/20">
+              <img alt="Nordic Fjords Residences in Stockholm, Sweden" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="images/product-1.jpg" />
+              <div class="absolute top-4 right-4 glass-panel px-3 py-1 rounded-full">
+                <span class="font-label-mono text-[10px] text-primary uppercase tracking-wider" data-en="Private Sale" data-sr="Приватна Продаја">Private Sale</span>
+              </div>
+            </div>
+            <div class="mt-4 flex justify-between items-start">
+              <div>
+                <h3 class="font-headline-sm text-on-surface group-hover:text-primary transition-colors" data-en="Nordic Fjords" data-sr="Скандинавски Фјордови">Nordic Fjords</h3>
+                <p class="text-on-surface-variant font-label-mono uppercase text-[11px] mt-1" data-en="Stockholm, Sweden / 2025" data-sr="Стокхолм, Шведска / 2025">Stockholm, Sweden / 2025</p>
+              </div>
+              <div class="text-right font-label-mono text-xs text-primary border border-primary/20 bg-primary/5 px-3 py-1 rounded-sm" data-en="1 Unit Left" data-sr="1 Јединица Слободна">
+                1 Unit Left
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       INTERACTIVE FLOOR PLAN MODAL
+       ═══════════════════════════════════════════════════════════════ -->
+  <div id="floorplan-modal" class="fixed inset-0 bg-[#0A0A0A]/95 z-[150] hidden flex items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-4xl p-6 md:p-8 rounded-sm relative border border-outline-variant/30 flex flex-col md:flex-row gap-8">
+      <button class="absolute top-4 right-4 text-on-surface hover:text-primary transition-colors font-semibold" onclick="closeUnitDetails()">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+      
+      <!-- Left side: Interactive blueprint -->
+      <div class="flex-1 flex flex-col justify-center items-center bg-surface-container-lowest/50 p-6 rounded-sm border border-outline-variant/10 relative min-h-[300px]">
+        <div class="absolute top-4 left-4 font-label-mono text-[10px] text-primary tracking-widest">BLUEPRINT MAP DATA v4.0</div>
+        <!-- Virtual Blueprint Diagram in SVG -->
+        <svg viewBox="0 0 400 300" class="w-full h-auto text-primary opacity-80 max-w-[340px]">
+          <!-- External border -->
+          <rect x="10" y="10" width="380" height="280" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" />
+          <!-- Walls -->
+          <line x1="10" y1="150" x2="390" y2="150" stroke="currentColor" stroke-width="2" />
+          <line x1="200" y1="10" x2="200" y2="290" stroke="currentColor" stroke-width="2" />
+          <line x1="200" y1="90" x2="390" y2="90" stroke="currentColor" stroke-width="1.5" />
+          <!-- Doors -->
+          <path d="M 200,90 A 40,40 0 0,1 240,130" fill="none" stroke="currentColor" stroke-dasharray="2 2" />
+          <path d="M 200,150 A 50,50 0 0,0 150,200" fill="none" stroke="currentColor" stroke-dasharray="2 2" />
+          <!-- Text Labels -->
+          <text x="50" y="80" font-family="monospace" font-size="10" fill="currentColor" opacity="0.6">MASTER BEDROOM</text>
+          <text x="240" y="50" font-family="monospace" font-size="10" fill="currentColor" opacity="0.6">KITCHEN / LIVING</text>
+          <text x="60" y="220" font-family="monospace" font-size="10" fill="currentColor" opacity="0.6">LOGGIA TERRACE</text>
+          <text x="245" y="220" font-family="monospace" font-size="10" fill="currentColor" opacity="0.6">VESTIBULE ENTRY</text>
+          <!-- Measurements -->
+          <text x="185" y="145" font-family="monospace" font-size="8" fill="#e6c479">7.20m</text>
+          <text x="205" y="105" font-family="monospace" font-size="8" fill="#e6c479">5.40m</text>
+        </svg>
+      </div>
+
+      <!-- Right side: Specifications list -->
+      <div class="w-full md:w-[350px] flex flex-col justify-between">
+        <div>
+          <span class="font-label-mono text-xs text-primary tracking-widest block uppercase mb-1" id="modal-subtitle">Belgrade, Serbia</span>
+          <h3 class="font-headline-sm text-on-surface mb-4" id="modal-title">Hillside Penthouse</h3>
+          <p class="text-on-surface-variant font-body-md mb-6 text-sm" id="modal-desc">
+            Dual-oriented layout boasting expansive ceiling heights (3.4m), custom limestone fittings, and automated floor-to-ceiling glass wall sliders.
+          </p>
+          
+          <div class="border-t border-outline-variant/20 py-3 flex justify-between font-label-mono text-xs">
+            <span class="text-on-surface-variant uppercase" data-en="Total Area" data-sr="Укупна Површина">Total Area</span>
+            <span class="text-on-surface font-semibold" id="modal-area">342 m²</span>
+          </div>
+          <div class="border-t border-outline-variant/20 py-3 flex justify-between font-label-mono text-xs">
+            <span class="text-on-surface-variant uppercase" data-en="Bedrooms" data-sr="Спаваће Собе">Bedrooms</span>
+            <span class="text-on-surface font-semibold" id="modal-beds">4 Rooms</span>
+          </div>
+          <div class="border-t border-outline-variant/20 py-3 flex justify-between font-label-mono text-xs">
+            <span class="text-on-surface-variant uppercase" data-en="Air Quality Rating" data-sr="Квалитет Ваздуха">Air Quality Rating</span>
+            <span class="text-secondary font-semibold">A+ PM2.5 Active</span>
+          </div>
+          <div class="border-t border-b border-outline-variant/20 py-3 flex justify-between font-label-mono text-xs">
+            <span class="text-on-surface-variant uppercase" data-en="Status" data-sr="Статус">Status</span>
+            <span class="text-primary font-semibold" id="modal-status">Available</span>
+          </div>
+        </div>
+
+        <button class="mt-6 w-full py-3 bg-primary text-on-primary font-label-caps uppercase tracking-widest hover:bg-[#c9a961] transition-all rounded-sm" onclick="modalInquire()" data-en="Request Protocol" data-sr="Затражи Протокол">
+          Request Protocol
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 4: PLACE / MICROCLIMATE & SIMULATED TELEMETRY
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative h-screen min-h-[720px] flex items-center justify-center overflow-hidden reveal" id="place">
+    <div class="absolute inset-0 z-0">
+      <img alt="Panoramic view of the Danube river from Tatar Hill" class="w-full h-full object-cover grayscale brightness-40" src="images/panorama.png" />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    
+    <div class="relative z-10 px-margin-mobile max-w-3xl text-center">
+      <span class="font-label-mono text-xs text-primary uppercase tracking-[0.4em] mb-4 block" data-en="THE HORIZON" data-sr="ХОРИЗОНТ">THE HORIZON</span>
+      <h2 class="font-display-xl text-display-xl-mobile md:text-display-xl italic mb-6 leading-tight" data-en="&ldquo;A thousand feet above the city.&rdquo;" data-sr="&ldquo;Хиљаду стопа изнад града.&rdquo;">"A thousand feet above the city."</h2>
+      <p class="font-body-lg text-on-surface max-w-xl mx-auto opacity-90 leading-relaxed" data-en="Situated on the peak of Tatar Hill, our residences benefit from a unique microclimate. The air is filtered by the surrounding dense forest, providing documented respiratory benefits and a temperature that stays cooler than the city center." data-sr="Смештене на самом врху Татарског Брда, наше резиденције имају посебну микроклиму. Окружујућа густа шума филтрира ваздух, доносећи доказане здравствене бенефите и температуру која је константно нижа од градског језгра.">
+        Situated on the peak of Tatar Hill, our residences benefit from a unique microclimate. The air is filtered by the surrounding dense forest, providing documented respiratory benefits and a temperature that stays cooler than the city center.
+      </p>
+    </div>
+
+    <!-- Live Telemetry Glass Panel (Simulated Sensor Readings) -->
+    <div class="absolute bottom-0 w-full glass-panel py-6 px-margin-mobile md:px-margin-desktop border-t-0 border-x-0">
+      <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        
+        <!-- Live status bar -->
+        <div class="flex items-center gap-2 border border-primary/20 bg-primary/5 px-3 py-1 font-label-mono text-[10px] tracking-widest text-primary uppercase">
+          <span class="w-1.5 h-1.5 bg-primary rounded-full pulse-gold"></span>
+          <span data-en="TATAR HILL ACTIVE PROBE DATA" data-sr="АКТИВНЕ СОНДЕ ТАТАРСКО БРДО">TATAR HILL ACTIVE PROBE DATA</span>
+        </div>
+
+        <div class="w-full md:w-auto grid grid-cols-2 md:flex md:flex-row gap-gutter font-label-mono text-xs uppercase text-on-surface-variant tracking-widest text-center md:text-left">
+          <div class="md:border-r border-outline-variant/20 md:pr-8">
+            <span data-en="Altitude" data-sr="Висина">Altitude</span>
+            <span class="block text-primary text-base font-bold mt-1">320m</span>
+          </div>
+          <div class="md:border-r border-outline-variant/20 md:pr-8">
+            <span data-en="Forest Cover" data-sr="Пошумљеност">Forest Cover</span>
+            <span class="block text-primary text-base font-bold mt-1">82%</span>
+          </div>
+          <div class="md:border-r border-outline-variant/20 md:pr-8">
+            <span data-en="PM2.5 Index" data-sr="PM2.5 Индекс">PM2.5 Index</span>
+            <span id="telemetry-pm25" class="block text-secondary text-base font-bold mt-1 transition-all duration-500">4.2</span>
+          </div>
+          <div class="md:border-r border-outline-variant/20 md:pr-8">
+            <span data-en="Noise Level" data-sr="Ниво Буке">Noise Level</span>
+            <span id="telemetry-noise" class="block text-primary text-base font-bold mt-1 transition-all duration-500">28dB</span>
+          </div>
+          <div>
+            <span data-en="Ambient Temp" data-sr="Температура">Ambient Temp</span>
+            <span id="telemetry-temp" class="block text-primary text-base font-bold mt-1 transition-all duration-500">19.4°C</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 5: FOOTPRINT (INTERACTIVE WORLD MAP WIDGET)
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-[#0E0E0E] border-y border-outline-variant/10 reveal" id="footprint">
+    <div class="max-w-container-max mx-auto text-center mb-12">
+      <span class="font-label-mono text-xs text-primary uppercase tracking-[0.3em]" data-en="MARKET PRESENCE" data-sr="ГЛОБАЛНО ПРИСУСТВО">MARKET PRESENCE</span>
+      <h2 class="font-headline-lg text-on-surface mt-2" data-en="Global Footprint" data-sr="Глобално Присуство">Global Footprint</h2>
+      <p class="text-on-surface-variant max-w-md mx-auto mt-2 text-sm" data-en="Strategic locations that define the new luxury geography. Click a hub to access key specifications." data-sr="Стратешке локације које дефинишу нову луксузну географију. Кликните на чвориште за кључне спецификације.">Strategic locations that define the new luxury geography. Click a hub to access key specifications.</p>
+    </div>
+
+    <div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+      
+      <!-- Left: Dynamic simulated coordinate space (interactive map wrapper) -->
+      <div class="col-span-12 lg:col-span-8 relative w-full aspect-[21/9] md:aspect-[21/8] bg-[#131313] border border-outline-variant/20 rounded-sm overflow-hidden flex items-center justify-center">
+        <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, rgba(230, 196, 121, 0.3) 1.5px, transparent 0); background-size: 24px 24px;"></div>
+        
+        <!-- Global grid overlays representing geographic anchors -->
+        <div class="relative w-full h-full">
+          <!-- Pulse Dot: SWEDEN -->
+          <button onclick="selectMapHub('sweden')" class="absolute top-[35%] left-[45%] md:left-[48%] group flex items-center justify-center focus:outline-none" aria-label="Sweden Hub">
+            <span id="dot-sweden" class="w-3.5 h-3.5 bg-primary rounded-full block pulse-gold ring-4 ring-primary/20"></span>
+            <span class="absolute top-6 font-label-mono text-[9px] tracking-wider text-on-surface opacity-80 group-hover:text-primary transition-colors">SWEDEN</span>
+          </button>
+          
+          <!-- Pulse Dot: POLAND -->
+          <button onclick="selectMapHub('poland')" class="absolute top-[48%] left-[48%] md:left-[51%] group flex items-center justify-center focus:outline-none" aria-label="Poland Hub">
+            <span id="dot-poland" class="w-3.5 h-3.5 bg-outline rounded-full block ring-4 ring-outline/20 hover:bg-primary transition-colors"></span>
+            <span class="absolute top-6 font-label-mono text-[9px] tracking-wider text-on-surface opacity-80 group-hover:text-primary transition-colors">POLAND</span>
+          </button>
+
+          <!-- Pulse Dot: SERBIA -->
+          <button onclick="selectMapHub('serbia')" class="absolute top-[58%] left-[50%] md:left-[53%] group flex items-center justify-center focus:outline-none" aria-label="Serbia HQ Hub">
+            <span id="dot-serbia" class="w-4.5 h-4.5 bg-primary rounded-full block pulse-gold ring-4 ring-primary/30 scale-110"></span>
+            <span class="absolute top-6 font-label-mono text-[9px] font-bold tracking-wider text-primary">SERBIA (HQ)</span>
+          </button>
+
+          <!-- Pulse Dot: CYPRUS -->
+          <button onclick="selectMapHub('cyprus')" class="absolute top-[66%] left-[54%] md:left-[56%] group flex items-center justify-center focus:outline-none" aria-label="Cyprus Hub">
+            <span id="dot-cyprus" class="w-3.5 h-3.5 bg-primary rounded-full block pulse-gold ring-4 ring-primary/20"></span>
+            <span class="absolute top-6 font-label-mono text-[9px] tracking-wider text-on-surface opacity-80 group-hover:text-primary transition-colors">CYPRUS</span>
+          </button>
+
+          <!-- Pulse Dot: UAE -->
+          <button onclick="selectMapHub('uae')" class="absolute top-[72%] left-[64%] md:left-[67%] group flex items-center justify-center focus:outline-none" aria-label="UAE Hub">
+            <span id="dot-uae" class="w-3.5 h-3.5 bg-outline rounded-full block ring-4 ring-outline/20 hover:bg-primary transition-colors"></span>
+            <span class="absolute top-6 font-label-mono text-[9px] tracking-wider text-on-surface opacity-80 group-hover:text-primary transition-colors">UAE</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Detailed statistics dashboard panel -->
+      <div class="col-span-12 lg:col-span-4 h-full flex flex-col justify-center">
+        <div id="map-dashboard-card" class="bg-[#131313] border border-outline-variant/20 p-6 rounded-sm min-h-[220px] flex flex-col justify-between transition-all duration-500 ease-out">
+          <!-- Hub Details Header -->
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="font-label-mono text-xs text-primary uppercase tracking-widest" id="map-hub-region">Serbia</span>
+              <span class="font-label-mono text-[10px] bg-primary/10 border border-primary/20 text-primary px-2.5 py-0.5 rounded-sm uppercase" id="map-hub-status" data-en="HQ OPERATIONAL" data-sr="ШТАБ АКТИВАН">HQ OPERATIONAL</span>
+            </div>
+            <h3 class="font-headline-sm text-on-surface mb-2" id="map-hub-title">Belgrade &amp; Novi Sad</h3>
+            <p class="text-on-surface-variant font-body-md text-sm leading-relaxed" id="map-hub-description" data-en="Central executive hub coordinating global operations. Flagship smart-luxury developments situated on the protected heights of Tatar Hill." data-sr="Централно извршно чвориште које координише глобалне операције. Водећи паметни луксузни пројекти на заштићеним висинама Татарског Брда.">
+              Central executive hub coordinating global operations. Flagship smart-luxury developments situated on the protected heights of Tatar Hill.
+            </p>
+          </div>
+          <!-- Yield Info -->
+          <div class="mt-6 pt-4 border-t border-outline-variant/10 flex justify-between items-center">
+            <div>
+              <span class="font-label-mono text-[10px] uppercase text-on-surface-variant tracking-wider" data-en="Est. Growth Yield" data-sr="Процењен Принос">Est. Growth Yield</span>
+              <span class="block font-label-mono text-lg font-bold text-primary mt-0.5" id="map-hub-yield">14.2%</span>
+            </div>
+            <div class="text-right">
+              <span class="font-label-mono text-[10px] uppercase text-on-surface-variant tracking-wider" data-en="Developments" data-sr="Пројекти">Developments</span>
+              <span class="block font-label-mono text-lg font-bold text-on-surface mt-0.5" id="map-hub-count">3 Active</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 6: FUTURE STATS GRID
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="py-stack-xl px-margin-mobile md:px-margin-desktop bg-[#0A0A0A] reveal">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-stack-xl">
+      <div class="text-center md:text-left border-l border-outline-variant/20 pl-6">
+        <h3 class="font-display-xl text-display-xl-mobile md:text-[72px] leading-none mb-3 text-primary font-bold">2028</h3>
+        <h4 class="font-label-caps tracking-[0.2em] text-on-surface uppercase mb-2" data-en="Strategic Horizon" data-sr="Стратешки Хоризонт">Strategic Horizon</h4>
+        <p class="text-on-surface-variant font-body-md text-sm" data-en="Target for complete carbon-negative operation across all upcoming residences." data-sr="Циљ за потпуно карбон-негативно функционисање свих нових стамбених објеката.">Target for complete carbon-negative operation across all upcoming residences.</p>
+      </div>
+      <div class="text-center md:text-left border-l border-outline-variant/20 pl-6">
+        <h3 class="font-display-xl text-display-xl-mobile md:text-[72px] leading-none mb-3 text-primary font-bold">+3</h3>
+        <h4 class="font-label-caps tracking-[0.2em] text-on-surface uppercase mb-2" data-en="Major Landmarks" data-sr="Велика Обележја">Major Landmarks</h4>
+        <p class="text-on-surface-variant font-body-md text-sm" data-en="New project launches scheduled for 2026 across Nordic and Middle-Eastern hubs." data-sr="Лансирање нових пројеката планирано за 2026. годину широм севера и Блиског Истока.">New project launches scheduled for 2026 across Nordic and Middle-Eastern hubs.</p>
+      </div>
+      <div class="text-center md:text-left border-l border-outline-variant/20 pl-6">
+        <h3 class="font-display-xl text-display-xl-mobile md:text-[72px] leading-none mb-3 text-primary font-bold">100</h3>
+        <h4 class="font-label-caps tracking-[0.2em] text-on-surface uppercase mb-2" data-en="Year Guarantee" data-sr="Век Гаранције">Year Guarantee</h4>
+        <p class="text-on-surface-variant font-body-md text-sm" data-en="Our build quality is certified to withstand century-scale environmental shifts." data-sr="Наш квалитет градње је сертификован да издржи климатске и географске промене на нивоу века.">Our build quality is certified to withstand century-scale environmental shifts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SECTION 7: DYNAMIC MULTI-STEP CONVERSATION FORM
+       ═══════════════════════════════════════════════════════════════ -->
+  <section class="relative py-stack-xl px-margin-mobile md:px-margin-desktop bg-[#131313] overflow-hidden reveal" id="contact">
+    <div class="absolute inset-0 pointer-events-none opacity-10" style="background: radial-gradient(circle at 80% 30%, #e6c479 0%, transparent 60%);"></div>
+    
+    <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-stack-xl relative z-10">
+      
+      <!-- Contact Info Section -->
+      <div class="flex flex-col justify-between">
+        <div>
+          <h2 class="font-display-xl text-display-xl-mobile md:text-headline-lg mb-6 leading-tight" data-en="Start the<br/>conversation." data-sr="Започните<br/>разговор.">Start the<br/>conversation.</h2>
+          <p class="text-on-surface-variant font-body-lg mb-8" data-en="We extend absolute confidentiality protocol to all inquiries. Connect with our concierge to discuss residential custom builds or portfolio yields." data-sr="Гарантујемо потпуну поверљивост протокола за све упите. Контактирајте нашег консијержа како бисте разговарали о приватним резиденцијама или инвестиционим приносима.">
+            We extend absolute confidentiality protocol to all inquiries. Connect with our concierge to discuss residential custom builds or portfolio yields.
+          </p>
+        </div>
+        
+        <!-- Address Card -->
+        <div class="bg-[#0A0A0A] border border-outline-variant/15 p-6 rounded-sm space-y-4">
+          <div class="flex items-start gap-4">
+            <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+            <div>
+              <h4 class="font-label-caps text-on-surface uppercase tracking-wider mb-0.5" data-en="Serbia HQ" data-sr="Србија Седиште">Serbia HQ</h4>
+              <p class="text-xs text-on-surface-variant leading-relaxed">Knez Mihailova 33, 4th Floor<br/>Belgrade 11000, Serbia</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 pt-3 border-t border-outline-variant/10">
+            <span class="material-symbols-outlined text-primary text-xl">mail</span>
+            <div>
+              <h4 class="font-label-caps text-on-surface uppercase tracking-wider mb-0.5" data-en="Secure Protocols" data-sr="Сигуран Протокол">Secure Protocols</h4>
+              <p class="text-xs text-on-surface-variant">concierge@malom.invest<br/>+381 (0) 65 99 22 11</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Advanced Multistep Form Panel -->
+      <div class="bg-[#0A0A0A] border border-outline-variant/20 p-6 md:p-8 rounded-sm">
+        <form class="space-y-6" id="inquiry-form" novalidate>
+          
+          <!-- Protocol Select Tabs -->
+          <div>
+            <label class="font-label-mono text-[10px] uppercase text-on-surface-variant tracking-wider block mb-2" data-en="Inquiry protocol" data-sr="Протокол упита">Inquiry protocol</label>
+            <div class="grid grid-cols-3 gap-2">
+              <button type="button" onclick="selectFormProtocol('residence')" id="btn-protocol-residence" class="py-2.5 bg-primary text-on-primary font-label-mono text-[10px] uppercase tracking-wider text-center rounded-sm transition-all focus:outline-none" data-en="Residence" data-sr="Резиденција">Residence</button>
+              <button type="button" onclick="selectFormProtocol('yield')" id="btn-protocol-yield" class="py-2.5 bg-[#131313] border border-outline-variant/20 text-on-surface-variant hover:text-on-surface hover:border-primary/50 font-label-mono text-[10px] uppercase tracking-wider text-center rounded-sm transition-all focus:outline-none" data-en="Yield Invest" data-sr="Принос">Yield Invest</button>
+              <button type="button" onclick="selectFormProtocol('partnership')" id="btn-protocol-partnership" class="py-2.5 bg-[#131313] border border-outline-variant/20 text-on-surface-variant hover:text-on-surface hover:border-primary/50 font-label-mono text-[10px] uppercase tracking-wider text-center rounded-sm transition-all focus:outline-none" data-en="Partnership" data-sr="Партнерство">Partnership</button>
+            </div>
+            <!-- Hidden field for protocol type -->
+            <input type="hidden" name="protocol_interest" id="input-protocol-value" value="Residence" />
+          </div>
+
+          <!-- Form inputs -->
+          <div class="group relative">
+            <label class="font-label-mono text-[10px] uppercase text-on-surface-variant group-focus-within:text-primary transition-colors" data-en="Full Name" data-sr="Име и Презиме">Full Name</label>
+            <input required id="form-input-name" class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-2.5 text-on-surface placeholder:text-on-surface-variant/30 focus:ring-0 focus:border-primary transition-colors font-body-md" placeholder="Johnathan Doe" type="text"/>
+          </div>
+          
+          <div class="group relative">
+            <label class="font-label-mono text-[10px] uppercase text-on-surface-variant group-focus-within:text-primary transition-colors" data-en="Digital Identity (Email)" data-sr="Дигитални Идентитет (Емаил)">Digital Identity (Email)</label>
+            <input required id="form-input-email" class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-2.5 text-on-surface placeholder:text-on-surface-variant/30 focus:ring-0 focus:border-primary transition-colors font-body-md" placeholder="identity@domain.com" type="email"/>
+          </div>
+          
+          <div class="group relative">
+            <label class="font-label-mono text-[10px] uppercase text-on-surface-variant group-focus-within:text-primary transition-colors" data-en="Brief Inquiry" data-sr="Кратак Опис Упита">Brief Inquiry</label>
+            <textarea id="form-input-message" class="w-full bg-transparent border-0 border-b border-outline-variant/30 py-2.5 text-on-surface placeholder:text-on-surface-variant/30 focus:ring-0 focus:border-primary transition-colors font-body-md resize-none" placeholder="Project interest..." rows="2"></textarea>
+          </div>
+
+          <!-- Feedback alerts -->
+          <p id="form-error-panel" class="hidden text-error font-label-mono text-[10px] uppercase tracking-wider" data-en="Please complete all required fields correctly." data-sr="Молимо вас да правилно попуните сва обавезна поља.">Please complete all required fields correctly.</p>
+
+          <button type="submit" class="w-full py-4 bg-primary text-on-primary font-label-caps uppercase tracking-[0.2em] hover:bg-on-surface hover:text-surface transition-all duration-500 rounded-sm" data-en="Initiate Connection" data-sr="Иницирај Повезивање">
+            Initiate Connection
+          </button>
+        </form>
+
+        <!-- Success overlay -->
+        <div id="form-success-panel" class="hidden py-8 text-center flex flex-col justify-center items-center h-full">
+          <div class="w-12 h-12 mb-4 flex items-center justify-center rotate-45 border border-primary text-primary" aria-hidden="true">
+            <span class="material-symbols-outlined -rotate-45 text-xl">check</span>
+          </div>
+          <h3 class="font-headline-sm text-on-surface mb-2" data-en="Connection protocol initiated." data-sr="Протокол повезивања је покренут.">Connection protocol initiated.</h3>
+          <p class="text-xs text-on-surface-variant max-w-xs" data-en="Our concierge will contact you on your secure digital identity within 4 cycles." data-sr="Наш консијерж ће вас контактирати на ваш дигитални идентитет у року од 4 сата.">Our concierge will contact you on your secure digital identity within 4 cycles.</p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="bg-[#0A0A0A] py-12 border-t border-outline-variant/10 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row items-center justify-between gap-6" role="contentinfo">
+    <div class="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-widest text-center md:text-left">
+      © 2026 Malom Invest. Kinetic Smart-Luxury.
+    </div>
+    
+    <div class="flex gap-stack-lg font-label-mono text-[10px] text-on-surface-variant uppercase tracking-widest">
+      <a class="hover:text-on-surface transition-colors" href="#" data-en="Legal" data-sr="Правно">Legal</a>
+      <a class="hover:text-on-surface transition-colors" href="#" data-en="Privacy" data-sr="Приватност">Privacy</a>
+      <a class="hover:text-on-surface transition-colors" href="#" data-en="Investor Portal" data-sr="Инвеститор Портал">Investor Portal</a>
+    </div>
+    
+    <div class="font-label-mono text-[10px] text-on-surface-variant uppercase flex items-center gap-2">
+      Status: <span class="text-primary font-bold">Operational</span>
+    </div>
+  </footer>
+
+  <!-- Include Core Javascript Logic -->
+  <script src="src/main.js"></script>
+</body>
+</html>

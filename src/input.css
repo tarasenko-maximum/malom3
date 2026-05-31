@@ -1,0 +1,143 @@
+/* ─────────────────────────────────────────────
+   Malom Invest — src/input.css
+   Tailwind directives + Kinetic Smart-Luxury overrides
+   ───────────────────────────────────────────── */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #0A0A0A;
+  }
+
+  body {
+    background-color: #0A0A0A;
+    color: #e5e2e1;
+  }
+
+  /* Custom thin scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0E0E0E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e6c479;
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c9a961;
+  }
+
+  /* Focus styling for keyboard accessibility */
+  :focus-visible {
+    outline: 2px solid #e6c479;
+    outline-offset: 4px;
+  }
+}
+
+@layer components {
+  /* Dynamic reveal-on-scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Glassmorphism panel styling */
+  .glass-panel {
+    background: rgba(26, 26, 26, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(153, 144, 128, 0.2);
+  }
+
+  /* Inner Living Gold accent */
+  .living-gold-inner {
+    box-shadow: inset 0 0 2px 0 rgba(230, 196, 121, 0.15);
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+  }
+
+  .living-gold-inner:hover {
+    border-color: rgba(230, 196, 121, 0.4);
+    box-shadow: inset 0 0 6px 0 rgba(230, 196, 121, 0.25);
+  }
+
+  /* Marquee Ticker Wrap */
+  .ticker-wrap {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 40s linear infinite;
+  }
+
+  /* Mobile menu animations */
+  .menu-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+  }
+
+  .menu-visible {
+    transform: translateY(0);
+    transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+  }
+
+  .no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  /* Hide scrollbar for select elements */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Animations */
+@keyframes pulse-gold {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(230, 196, 121, 0.4);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+    box-shadow: 0 0 8px 2px rgba(230, 196, 121, 0.2);
+  }
+}
+
+.pulse-gold {
+  animation: pulse-gold 2.5s infinite ease-in-out;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
